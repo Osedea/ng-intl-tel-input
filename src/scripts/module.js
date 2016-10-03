@@ -18,13 +18,13 @@
           intlTelInputOptions: '=?',
           intlTelInputController: '=?'
         },
-        link: function link ($scope, $element, attrs, modelCtrl) {
+        link: function link ($scope, element, attrs, modelCtrl) {
 
           /**
            * Obtaining reference to the plugin API
            * and making sure it's present.
            */
-          var pluginApi = $element.intlTelInput;
+          var pluginApi = $(element).intlTelInput;
           if (!pluginApi) {
             log('intl-tel-input jQuery plugin must be loaded, skipping directive initialization');
             return;
@@ -110,7 +110,7 @@
            *
            * Using two event names for both latest and legacy versions of the plugin.
            */
-          $element.bind('country-change countrychange', function () {
+          element.bind('country-change countrychange', function () {
             if (!renderingView && !settingCountry) {
               // It was changed by the user, so we need to update the model value.
               updateViewValue('countrychange');
@@ -144,7 +144,7 @@
 
 
           function callApi () {
-            return pluginApi.apply($element, arguments);
+            return pluginApi.apply($(element), arguments);
           }
 
           function callApiWithArguments (method, args) {
@@ -170,12 +170,12 @@
           function isValidInput (value) {
             var useWorkaround = ('undefined' !== typeof value);
             if (useWorkaround) {
-              var previousValue = $element.val();
-              $element.val(value);
+              var previousValue = element.val();
+              element.val(value);
             }
             var result = callApi('isValidNumber');
             if (useWorkaround) {
-              $element.val(previousValue);
+              element.val(previousValue);
             }
             return result;
           }
