@@ -1,11 +1,7 @@
-# betsol-ng-intl-tel-input
-
-[![npm version](https://badge.fury.io/js/betsol-ng-intl-tel-input.svg)](http://badge.fury.io/js/betsol-ng-intl-tel-input)
-[![Bower version](https://badge.fury.io/bo/betsol-ng-intl-tel-input.svg)](http://badge.fury.io/bo/betsol-ng-intl-tel-input)
-
+# ng-intl-tel-input
 
 This module for Angular.js (`^1.2.29`) provides integration
-for the great [intl-tel-input][intl-tel-input] jQuery plugin (version 7-8 are supported).
+for the great [intl-tel-input][intl-tel-input] jQuery plugin (version 9.0.0).
 
 Please feel free to investigate [the original plugin][intl-tel-input]
 for mode details, [features][intl-tel-input-features] and
@@ -18,9 +14,9 @@ for mode details, [features][intl-tel-input-features] and
 
 ### Install integration library with `npm` or `Bower`
 
-- `npm i --save betsol-ng-intl-tel-input`
+- `npm i --save simonnilsson/ng-intl-tel-input`
 
-- `bower install --save betsol-ng-intl-tel-input`
+- `bower install --save simonnilsson/ng-intl-tel-input`
 
 
 ### Add integration library to your page
@@ -29,10 +25,10 @@ Make sure, that module is added to your page either as a part of automatically b
 or manually using the code like this:
 
 ``` html
-<script src="../betsol-ng-intl-tel-input/dist/betsol-ng-intl-tel-input.js"></script>
+<script src="../betsol-ng-intl-tel-input/dist/ng-intl-tel-input.js"></script>
 ```
 
-You should use minified version (`betsol-ng-intl-tel-input.min.js`) in production.
+You should use minified version (`ng-intl-tel-input.min.js`) in production.
 
 
 ### Add dependency in your application's module definition
@@ -40,7 +36,7 @@ You should use minified version (`betsol-ng-intl-tel-input.min.js`) in productio
 ``` javascript
 var application = angular.module('application', [
   // ...
-  'betsol.intlTelInput'
+  'intlTelInput'
 ]);
 ```
 
@@ -111,7 +107,7 @@ that will be populated with the directive's API functions.
 
 ```javascript
 angular
-  .module('app', ['betsol.intlTelInput'])
+  .module('app', ['intlTelInput'])
   .controller('MyCtrl', function ($scope) {
     $scope.myIntlTelInputCtrl;
     $scope.changeCountryToRussia = function () {
