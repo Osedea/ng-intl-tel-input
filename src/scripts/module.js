@@ -4,7 +4,7 @@
 
   var VALIDATOR_NAME = 'phoneNumber';
 
-  angular.module('betsol.intlTelInput', [])
+  angular.module('intlTelInput', [])
 
     .constant('intlTelInputOptions', {})
 

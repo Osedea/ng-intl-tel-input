@@ -8,7 +8,7 @@ module.exports = function (config) {
       'node_modules/angular-mocks/angular-mocks.js',
 
       // Module files
-      'dist/scripts/betsol-ng-intl-tel-input.js',
+      'dist/scripts/ng-intl-tel-input.js',
 
       // Tests
       'test/**/test-*.js'

@@ -1,4 +1,9 @@
-# betsol-ng-intl-tel-input changelog
+# ng-intl-tel-input changelog
+
+## Versio 1.4.0
+(03 Oct 2016)
+
+- Version updates
 
 ## Version 1.3.0
 (16 Apr 2016)
