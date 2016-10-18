@@ -6,7 +6,15 @@
  *
  * @author Slava Fomin II <s.fomin@betsol.ru>
  */
-(function (angular) {
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery', 'angular', 'intl-tel-input'], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory(require('jquery'), require('angular'), require('intl-tel-input'));
+    } else {
+        factory(jQuery, angular);
+    }
+}(function ($, angular) {
 
   'use strict';
 
@@ -199,4 +207,4 @@
     console.log('ng-intl-tel-input: ' + message);
   }
 
-})(angular);
+}));
