@@ -1,7 +1,7 @@
 /**
  * ng-intl-tel-input - intl-tel-input integration for Angular.js
- * @version v1.4.0
- * @link https://github.com/simonnilsson/ng-intl-tel-input
+ * @version v1.4.1
+ * @link https://github.com/Osedea/ng-intl-tel-input
  * @license MIT
  *
  * @author Slava Fomin II <s.fomin@betsol.ru>
@@ -86,6 +86,11 @@
             // @todo: deprecate this in the future!
             var validateValue = function (value) {
               if (!value) {
+                // Improving empty input handling (upon clearing it) to, instead of keeping form validity state as is, to set it according to parametrization (defaults to standard library behaviour, if parameter not set)
+                if ((typeof intlTelInputOptions !== 'undefined') && (typeof intlTelInputOptions.treatEmptyInputAsValidForm !== 'undefined')) {
+                    modelCtrl.$setValidity(VALIDATOR_NAME, intlTelInputOptions.treatEmptyInputAsValidForm);
+                }
+
                 return value;
               }
               var isValid = isValidInput(value);
