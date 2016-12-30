@@ -86,7 +86,8 @@
                 return value;
               }
               var isValid = isValidInput(value);
-              modelCtrl.$setValidity(VALIDATOR_NAME, isValid);
+              // Don't flag invalid unless explicitly returned as the state (correction to 1st load of an exsitng valid number, previously inserted through this API validation, but receives a null API response further resulting in the form starting in invalid state upon reload where info is populated off the bat)
+              modelCtrl.$setValidity(VALIDATOR_NAME, (isValid === false ? false : true));
               return value;
             };
             modelCtrl.$parsers.push(validateValue);
