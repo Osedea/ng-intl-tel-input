@@ -1,7 +1,7 @@
 {
   "name": "ng-intl-tel-input",
   "description": "intl-tel-input integration for Angular.js",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "dist/scripts/ng-intl-tel-input.js",
   "ignore": [
     "src",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/simonnilsson/ng-intl-tel-input.git"
+    "url": "git://github.com/Osedea/ng-intl-tel-input.git"
   },
   "keywords": [
     "angular",
