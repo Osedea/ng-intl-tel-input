@@ -1,6 +1,6 @@
 /**
  * ng-intl-tel-input - intl-tel-input integration for Angular.js
- * @version v1.4.1
+ * @version v1.4.2
  * @link https://github.com/Osedea/ng-intl-tel-input
  * @license MIT
  *
@@ -94,7 +94,8 @@
                 return value;
               }
               var isValid = isValidInput(value);
-              modelCtrl.$setValidity(VALIDATOR_NAME, isValid);
+              // Don't flag invalid unless explicitly returned as the state (correction to 1st load of an exsitng valid number, previously inserted through this API validation, but receives a null API response further resulting in the form starting in invalid state upon reload where info is populated off the bat)
+              modelCtrl.$setValidity(VALIDATOR_NAME, (isValid === false ? false : true));
               return value;
             };
             modelCtrl.$parsers.push(validateValue);

@@ -1,7 +1,7 @@
 {
   "name": "ng-intl-tel-input",
   "description": "intl-tel-input integration for Angular.js",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "main": "dist/scripts/ng-intl-tel-input.js",
   "ignore": [
     "src",
