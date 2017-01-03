@@ -62,7 +62,13 @@ In other cases make sure to install it manually using the [following guide][intl
 
 You can configure the plugin by changing the global object `intlTelInputOptions`.
 This will apply specified changes across all plugin instances in your application.
-All configuration options could be found in the [original plugin documentation][intl-tel-input-options].
+The vast majority of the configuration options could be found in the [original plugin documentation][intl-tel-input-options].
+
+### Global - Added Configuration Options
+
+**treatEmptyInputAsValidForm**  
+Type: `Boolean` Default: `undefined`  
+Treat the empty input as a valid form input, or the opposite when set to false, as the default for your application needs. The default behavior, when this property is undefined, is kept as per library standard (keeps state from last validation before emptying the field).
 
 #### Global Configuration Example
 
